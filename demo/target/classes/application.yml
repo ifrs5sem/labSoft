@@ -1,0 +1,35 @@
+spring:
+  profiles.active: production
+  application:
+    name: cruncher
+  #datasource:
+    #driverClassName: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://localhost/test
+server.port: 9500
+meu:
+  segredo: ${random.value} #String aleatória
+  numero: ${random.int} #inteiro aleatório
+  numero-longo: ${random.long} #long aleatório
+  numero-menor-que- dez: ${random.int(10)}
+  numero-em-intervalo: ${random.int[1,10]}
+app:
+  name: "Nome da minha aplicação"
+  descricao: "${app.name} é uma aplicação usando Spring Boot."
+pageController:
+    mensagem: "Ola do application.yml"
+    nova-mensagem: "Ola novamente do application.yml"
+minhaconfig:
+  nome-aplicacao: Spring App
+  descricao: ${minhaconfig.nome-aplicacao} é uma aplicação usando Spring Boot
+  primeiro-nome: Rodrigo
+  ultimoNome: Noll
+  emailAdmin: rodrigo.noll@canoas.ifrs.edu.br
+  
+---
+spring:
+  profiles: development
+  mensagem: Ola de desenvolvimento
+---
+spring:
+  profiles: production
+  mensagem: Ola de producao
